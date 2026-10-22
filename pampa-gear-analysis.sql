@@ -1,5 +1,5 @@
 -- Pampa Gear: SQL analysis
--- Author · 2026-10-22
+-- Author: Jeronio Gomez Vara · 2026-10-22
 -- Engine: SQLite. Revenue counts delivered orders only: quantity * unit_price * (1 - discount).
 
 -- q1 · Explore the product catalog
@@ -206,9 +206,9 @@ HAVING COUNT (*) >1;
 
 -- q24 · Billing vs. payments reconciliation
 WITH billed AS (
-    SELECT o.order_id, SUM(i.quantity * I.unit_price * (1-i.discount)) AS billed
+    SELECT o.order_id, SUM(i.quantity * i.unit_price * (1-i.discount)) AS billed
     FROM order_items i
-    JOIN orders o ON o.order_id = I.order_id
+    JOIN orders o ON o.order_id = i.order_id
     WHERE o.status = 'Delivered'
     GROUP BY o.order_id),
      paid AS (
