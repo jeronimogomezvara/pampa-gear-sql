@@ -72,6 +72,10 @@ Every query is in [`pampa-gear-analysis.sql`](pampa-gear-analysis.sql), from bas
 | q17–q22 | Month-over-month change, best product per category, running totals, category share, second most expensive product |
 | q23–q26 | Duplicate payments, billing reconciliation, 2024 cohort retention, average order value by segment and channel |
 
+## How I built it
+
+I worked through these queries as part of a self-directed course, using AI (Claude) as a tutor: it explained concepts, gave me hints and helped me fix errors. I checked every query against the expected result and I can walk through the logic of each one, especially the reconciliation above.
+
 ## What I learned
 
 The hardest part was not the syntax but the grain: after joining orders with order lines, `COUNT(*)` counts lines, not orders. I used `COUNT(DISTINCT order_id)` or aggregated per order first in a CTE.
