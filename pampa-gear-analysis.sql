@@ -1,5 +1,5 @@
 -- Pampa Gear: SQL analysis
--- Author: Jeronio Gomez Vara · 2026-10-22
+-- Author: Jeronimo Gomez Vara · 2026-10-22
 -- Engine: SQLite. Revenue counts delivered orders only: quantity * unit_price * (1 - discount).
 
 -- q1 · Explore the product catalog
